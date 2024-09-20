@@ -1,2 +1,2 @@
 ## android
-- Study on Java coding
+- Studying Android Programming
