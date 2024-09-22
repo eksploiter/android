@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "HelloWorld"
 include ':app'
+
+// settings.gradle 에서는 library 나 plugin 의 source 들을 어디서 가져 오는지 저장해 주는 곳이다.

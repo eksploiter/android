@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.helloworld"
-        minSdk 16
-        targetSdk 31
+        minSdk 34
+        targetSdk 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -29,7 +29,9 @@ android {
     }
     namespace 'com.example.helloworld'
 }
-dependencies {
+dependencies { // 종속, 앱을 개발 하면서 가장 많이 수정을 하게 될 곳
+    // 여기는 우리가 만들 앱을 구성할 때 없으면 안될 필수적 요소를 담고 있다.
+    // http 통신을 위한 library, camera hardware 를 사용할 수 있도록 도와 주는 library 등 필요한 library 를 자유롭게 가져오면 된다.
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
