@@ -13,12 +13,22 @@
         android:theme="@style/Theme.ActivityAndFragment"
         tools:targetApi="31">
         <activity
+            android:name=".TwoColorActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".SubActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
+
                 <!-- intent-filter 가 있기 때문에 앱을 켰을 때 MainActivity 가 가장 면저 켜지는 것이다. -->
                 <action android:name="android.intent.action.MAIN" />
 
