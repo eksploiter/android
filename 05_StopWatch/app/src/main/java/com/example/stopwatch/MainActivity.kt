@@ -75,14 +75,21 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
             val second = (time % 6000) / 100
             val minute = time / 6000
 
-            tv_millisecond.text = if(milli_second < 10) ".0${milli_second}" else ".${milli_second}"
-            tv_second.text = if (second < 10) ":0${second}" else ":${second}"
-            tv_minute.text = "${minute}"
+            runOnUiThread { // Sam 변환 - Main Thread 에서 실행될 수 있도록 만들어 준다.
+                // BackGroundThread 에서는 UI 자원에 접근할 수 없다.
+                tv_millisecond.text = if(milli_second < 10) ".0${milli_second}" else ".${milli_second}"
+                tv_second.text = if (second < 10) ":0${second}" else ":${second}"
+                tv_minute.text = "${minute}"
+            }
         }
     }
 
     private fun pause() {
+        btn_start.text = getString(R.string.btn_start)
+        btn_start.setBackgroundColor(getColor(R.color.btn_start))
 
+        isRunning = false
+        timer?.cancel()
     }
 
     private fun restart() {
