@@ -44,7 +44,7 @@
         app:layout_constraintStart_toEndOf="@+id/tv_second" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_start"
         android:layout_width="88dp"
         android:layout_height="60dp"
         android:layout_marginBottom="100dp"
@@ -55,12 +55,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/button_restart"
         android:layout_width="88dp"
         android:layout_height="60dp"
         android:backgroundTint="@color/btn_restart"
         android:text="@string/btn_restart"
         android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/button_start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
