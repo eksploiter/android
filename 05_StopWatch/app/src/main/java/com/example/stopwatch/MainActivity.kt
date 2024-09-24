@@ -77,9 +77,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
 
             runOnUiThread { // Sam 변환 - Main Thread 에서 실행될 수 있도록 만들어 준다.
                 // BackGroundThread 에서는 UI 자원에 접근할 수 없다.
-                tv_millisecond.text = if(milli_second < 10) ".0${milli_second}" else ".${milli_second}"
-                tv_second.text = if (second < 10) ":0${second}" else ":${second}"
-                tv_minute.text = "${minute}"
+                if (isRunning) {
+                    tv_millisecond.text = if(milli_second < 10) ".0${milli_second}" else ".${milli_second}"
+                    tv_second.text = if (second < 10) ":0${second}" else ":${second}"
+                    tv_minute.text = "${minute}"
+                }
             }
         }
     }
@@ -93,6 +95,15 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
     }
 
     private fun restart() {
+        timer?.cancel()
 
+        btn_start.text = getString(R.string.btn_start)
+        btn_start.setBackgroundColor(getColor(R.color.btn_start))
+        isRunning = false
+
+        time = 0
+        tv_millisecond.text = getString(R.string.tv_millisecond)
+        tv_second.text = getString(R.string.tv_second)
+        tv_minute.text = getString(R.string.tv_minute)
     }
 }
