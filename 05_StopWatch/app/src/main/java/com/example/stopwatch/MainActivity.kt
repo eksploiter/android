@@ -39,6 +39,9 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
         tv_minute = findViewById(R.id.tv_minute)
         tv_second = findViewById(R.id.tv_second)
         tv_millisecond = findViewById(R.id.tv_millisecond)
+
+        btn_start.setOnClickListener(this)
+        btn_restart.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
