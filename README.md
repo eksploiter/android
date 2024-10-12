@@ -11,4 +11,4 @@
 ---
 
 ## License
-This project is created for educational purposes and is not intended for commercial use.
+This project is created for educational purposes and is not intended for commercial use. 
